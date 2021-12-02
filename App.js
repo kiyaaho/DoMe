@@ -90,7 +90,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFF',
     borderRadius: 60,
     borderColor: '#C0C0C0',
-    borderwidth: 1,
+    borderWidth: 1,
     width: 250,
   },
   addWrapper: {
@@ -101,7 +101,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     borderColor: '#C0C0C0',
-    borderwidth: 1,
+    borderWidth: 1,
   },
   addText: {},
 });
