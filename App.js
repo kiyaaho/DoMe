@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { KeyboardAvoidingView, StyleSheet, Text, View, TextInput, Touchable, Keyboard, TouchableOpacity } from 'react-native';
+import { KeyboardAvoidingView, StyleSheet, Text, View, TextInput, Touchable, Keyboard, TouchableOpacity, Platform } from 'react-native';
 import Task from './components/Task';
 
 export default function App() {
