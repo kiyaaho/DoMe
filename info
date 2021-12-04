@@ -1,0 +1,5 @@
+npm i @react-navigation/native
+npm i react-native-screens react-native-safe-area-context
+npm i @react-navigation/native-stack
+
+-> write this command in cmd for using navigation
