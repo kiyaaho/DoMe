@@ -1,10 +1,10 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import { StatusBar, SafeAreaView, Dimensions, ScrollView} from 'react-native';
 import {viewStyles, barStyles} from './styles';
 import Input from './components/Input';
 import Task from './components/Task';
 import AppHead from './components/AppHead';
-import Add from './components/Add';
+import AddButton from './components/AddButton';
 
 export default function HomeScreen() {
 
@@ -48,13 +48,13 @@ export default function HomeScreen() {
         setNewTask(text);
     };
 
+    
     return (
         <SafeAreaView style={viewStyles.container}>
             <StatusBar barStyle="light-content" style={barStyles.statusbar}/>
             
             <AppHead/>
-            
-            
+
             <Input value={newTask} onChangeText={_handleTextChange}
             onSubmitEditing={_addTask}/>
                 <ScrollView width = {width-20}>
@@ -63,7 +63,7 @@ export default function HomeScreen() {
                         toggleTask={_toggleTask} updateTask={_updateTask}/>
                     ))}
                 </ScrollView>
-            <Add/>
+            <AddButton/>
         </SafeAreaView>
     );
 }; 
