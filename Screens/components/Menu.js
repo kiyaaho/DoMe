@@ -10,15 +10,11 @@ const Menu = () => {
         alert("sort");
     };
 
-    const _share = id => {
-        alert("share");
+    const _delete = id => {
+        alert("Delete");
     };
 
-    const _edit = id => {
-        alert("edit");
-    };
-
-    const _competion_rate = id => {
+    const _search = id => {
         alert("competion rate");
     };
 
@@ -51,23 +47,16 @@ const Menu = () => {
 
               <Pressable
                 style={styles.menuItem}
-                onPress = {() => _share()}
+                onPress = {() => _delete()}
               >
-                <Text styles = {styles.modalText}>Share</Text>
+                <Text styles = {styles.modalText}>Multiple delete</Text>
               </Pressable>
 
               <Pressable
                 style={styles.menuItem}
-                onPress = {() => _edit()}
+                onPress = {() => _search()}
               >
-                <Text styles = {styles.modalText}>Edit</Text>
-              </Pressable>
-
-              <Pressable
-                style={styles.menuItem}
-                onPress = {() => _competion_rate()}
-              >
-                <Text styles = {styles.modalText}>Completion Rate</Text>
+                <Text styles = {styles.modalText}>Search</Text>
               </Pressable>
 
             </View>
