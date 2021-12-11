@@ -1,6 +1,6 @@
 import {useNavigation} from '@react-navigation/native';
 import {format} from 'date-fns';
-import {ko} from 'date-fns/locale';
+import {enGB} from 'date-fns/locale';
 import React, {useReducer} from 'react';
 import {Pressable, StyleSheet, Text, View} from 'react-native';
 import TransparentCircleButton from './TransparentCircleButton';
@@ -67,13 +67,13 @@ function WriteHeader({onSave, onAskRemove, isEditing, date, onChangeDate}) {
         <Pressable onPress={() => open('date')}>
           <Text>
             {format(new Date(date), 'PPP', {
-              locale: ko,
+              locale: enGB,
             })}
           </Text>
         </Pressable>
         <View style={styles.separator} />
         <Pressable onPress={() => open('time')}>
-          <Text>{format(new Date(date), 'p', {locale: ko})}</Text>
+          <Text>{format(new Date(date), 'p', {locale: enGB})}</Text>
         </Pressable>
       </View>
       <DateTimePickerModal
