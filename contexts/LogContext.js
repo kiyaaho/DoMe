@@ -10,18 +10,20 @@ export function LogContextProvider({children}) {
   const initialLogsRef = useRef(null);
   const [logs, setLogs] = useState([]);
 
-  const onCreate = ({title, comment, date, done}) => {
+  const onCreate = ({title, comment, date, done, selected}) => {
     const log = {
       id: uuidv4(),
       title,
       comment,
       date,
       done,
+      selected,
     };
     setLogs([log, ...logs]);
   };
 
   const onModify = modified => {
+    // logs 배열을 순회해 id가 일치하면 log를 교체하고 그렇지 않으면 유지
     const nextLogs = logs.map(log => (log.id === modified.id ? modified : log));
     setLogs(nextLogs);
   };
@@ -36,7 +38,18 @@ export function LogContextProvider({children}) {
     setLogs(nextLogs);
   }
 
+  const onSelect = id => {
+    const nextLogs = logs.map(log => (log.id === id ? {...log, selected: !log.selected} : log));
+    setLogs(nextLogs);
+  }
+
+  const onMultipleDelete = () => {
+    const nextLogs = logs.filter(log => log.selected !== true);
+    setLogs(nextLogs);
+  }
   useEffect(() => {
+    // useEffect 내에서 async 함수를 만들고 바로 호출
+    // IIFE 패턴
     (async () => {
       const savedLogs = await logsStorage.get();
       if (savedLogs) {
@@ -54,7 +67,7 @@ export function LogContextProvider({children}) {
   }, [logs]);
 
   return (
-    <LogContext.Provider value={{logs, onCreate, onModify, onRemove, onToggle}}>
+    <LogContext.Provider value={{logs, onCreate, onModify, onRemove, onToggle, onSelect, onMultipleDelete}}>
       {children}
     </LogContext.Provider>
   );
