@@ -18,6 +18,11 @@ function DateHead({date}) {
     navigation.navigate('Filter');
   }
 
+  const onDelete = () => {
+    setModalVisible(!modalVisible);
+    navigation.navigate('Delete');
+  }
+
   return (
     <>
       <View style={[styles.statusBarPlaceholder, {height: top}]} />
@@ -54,7 +59,7 @@ function DateHead({date}) {
             </Pressable>
 
             <Pressable
-              onPress={() => setModalVisible(!modalVisible)}
+              onPress={onDelete}
             >
               <Text style={styles.modalText}>Delete</Text>
             </Pressable>
