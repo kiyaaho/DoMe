@@ -3,6 +3,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import MainTab from './MainTab';
 import WriteScreen from './WriteScreen';
 import FilterScreen from './FilterScreen';
+import DeleteScreen from './DeleteScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -22,7 +23,12 @@ function RootStack() {
       <Stack.Screen
         name="Filter"  
         component={FilterScreen}
-        options={{headerShoen: true}}
+        options={{headerShown: true}}
+      />
+      <Stack.Screen
+        name="Delete"  
+        component={DeleteScreen}
+        options={{headerShown: true}}
       />
     </Stack.Navigator>
   );
