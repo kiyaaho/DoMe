@@ -1,21 +1,12 @@
 import React, { useContext } from 'react';
 import {Platform, Pressable, StyleSheet, Text, View, Image} from 'react-native';
 import {formatDistanceToNow, format} from 'date-fns';
-import {ko} from 'date-fns/locale';
+import {enGB} from 'date-fns/locale';
 import {useNavigation} from '@react-navigation/native';
 
 function formatDate(date) {
   const d = new Date(date);
-  const now = Date.now();
-  const diff = (now - d.getTime()) / 1000;
-
-  if (diff < 60 * 1) {
-    return 'now';
-  }
-  if (diff < 60 * 60 * 24 * 3) {
-    return formatDistanceToNow(d, {addSuffix: true, locale: ko});
-  }
-  return format(d, 'PPP EEE p', {locale: ko});
+  return format(d, 'PPP', {locale: enGB});
 }
 
 function truncate(text) {
@@ -29,7 +20,7 @@ function truncate(text) {
 
 function JustListItem({log,onSelect}) {
   const navigation = useNavigation();
-  const {id, title,selected} = log;
+  const {id, subtitle,selected, date} = log;
   const onPress = () => {
     navigation.navigate('Write', {
       log,
@@ -43,10 +34,14 @@ function JustListItem({log,onSelect}) {
       ]}
       android_ripple={{color: '#ededed'}}
       onPress={() => onSelect(id)}>
+
+      <View style={styles.bblock}>
       <View style ={[styles.circle, selected && styles.filled]}>
         {selected && (<Image source = {require('../assets/outline_cancel_white_24dp.png')}/>)}
       </View>
-      <Text style={[styles.title, selected && styles.lineThrough]}>{title}</Text>
+      <Text style={[styles.title, selected && styles.lineThrough]}>{subtitle}</Text>
+      </View>
+      <Text style={[styles.body]}>{formatDate(date)}</Text>   
     </Pressable>
   );
 }
@@ -56,7 +51,6 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     paddingHorizontal: 16,
     paddingVertical: 24,
-    flexDirection: 'row',
   },
   date: {
     fontSize: 12,
@@ -90,7 +84,10 @@ const styles = StyleSheet.create({
   lineThrough: {
     color: '#9e9e9e',
     textDecorationLine: 'line-through',
-  }
+  },
+  bblock:{
+    flexDirection: 'row',
+  },
 });
 
 export default JustListItem;

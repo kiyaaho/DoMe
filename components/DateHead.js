@@ -23,6 +23,12 @@ function DateHead({date}) {
     navigation.navigate('Delete');
   }
 
+  const onCategory = () => {
+    setModalVisible(!modalVisible);
+    navigation.navigate('Category');
+  }
+
+
   return (
     <>
       <View style={[styles.statusBarPlaceholder, {height: top}]} />
@@ -53,21 +59,15 @@ function DateHead({date}) {
             </Pressable>
 
             <Pressable
-              onPress={() => setModalVisible(!modalVisible)}
-            >
-              <Text style={styles.modalText}>Sort</Text>
-            </Pressable>
-
-            <Pressable
               onPress={onDelete}
             >
               <Text style={styles.modalText}>Delete</Text>
             </Pressable>
 
             <Pressable
-              onPress={() => setModalVisible(!modalVisible)}
+              onPress={onCategory}
             >
-              <Text style={styles.modalText}>Re-order</Text>
+              <Text style={styles.modalText}>Category</Text>
             </Pressable>
 
 
@@ -75,7 +75,7 @@ function DateHead({date}) {
         </View>
       </Modal>
 
-
+      
       <View style={styles.block}>
         <Text style={styles.dateText}>
           {year} / {month} / {day}

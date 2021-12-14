@@ -3,7 +3,7 @@ import React, {useEffect, useRef, useContext} from 'react';
 import {Platform, Pressable, StyleSheet, Animated, View, Image} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
-function FloatingWriteButton({hidden,onMultipleDelete}) {
+function DeleteButton({hidden,onMultipleDelete, onGoback}) {
   const animation = useRef(new Animated.Value(0)).current;
   useEffect(() => {
     Animated.spring(animation, {
@@ -87,4 +87,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default FloatingWriteButton;
+export default DeleteButton;

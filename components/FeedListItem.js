@@ -1,22 +1,16 @@
 import React, { useContext } from 'react';
 import {Platform, Pressable, StyleSheet, Text, View, Image} from 'react-native';
 import {formatDistanceToNow, format} from 'date-fns';
-import {ko} from 'date-fns/locale';
+import {enGB} from 'date-fns/locale';
 import {useNavigation} from '@react-navigation/native';
 
 function formatDate(date) {
   const d = new Date(date);
-  const now = Date.now();
-  const diff = (now - d.getTime()) / 1000;
-
-  if (diff < 60 * 1) {
-    return 'now';
-  }
-  if (diff < 60 * 60 * 24 * 3) {
-    return formatDistanceToNow(d, {addSuffix: true, locale: ko});
-  }
-  return format(d, 'PPP EEE p', {locale: ko});
+  const n = Date.now();
+  const diff = (n - d.getTime()) / 1000;
+  return format(d, 'PPP', {locale: enGB});
 }
+
 
 function truncate(text) {
   // 정규식을 사용해 모든 줄 바꿈 문자 제거
@@ -28,7 +22,7 @@ function truncate(text) {
 }
 
 function FeedListItem({log, onToggle}) {
-  const {id,title, done} = log; // 사용하기 편하게 객체 구조 분해 할당
+  const {id,subtitle, done, date} = log; // 사용하기 편하게 객체 구조 분해 할당
   const navigation = useNavigation();
 
   const onPress = () => {
@@ -36,6 +30,9 @@ function FeedListItem({log, onToggle}) {
       log,
     });
   };
+
+
+
   return (
     <Pressable
       style={({pressed}) => [
@@ -45,10 +42,13 @@ function FeedListItem({log, onToggle}) {
       android_ripple={{color: '#ededed'}}
       onPress={onPress}
       onLongPress = {() => onToggle(id)}>
+      <View style={styles.bblock}>
       <View style ={[styles.circle, done && styles.filled]}>
         {done && (<Image source = {require('../assets/outline_check_circle_white_24dp.png')}/>)}
       </View>
-      <Text style={[styles.title, done && styles.lineThrough]}>{title}</Text>
+      <Text style={[styles.title, done && styles.lineThrough]}>{subtitle}</Text>
+      </View>
+      <Text style={[styles.body]}>{formatDate(date)}</Text> 
     </Pressable>
   );
 }
@@ -58,6 +58,8 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     paddingHorizontal: 16,
     paddingVertical: 24,
+  },
+  bblock:{
     flexDirection: 'row',
   },
   date: {
@@ -73,8 +75,9 @@ const styles = StyleSheet.create({
   },
   body: {
     color: '#37474f',
-    fontSize: 16,
+    fontSize: 12,
     lineHeight: 21,
+    alignItems:'flex-end',
   },
   circle: {
     width: 24,

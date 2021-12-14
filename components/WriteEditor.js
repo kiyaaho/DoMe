@@ -1,15 +1,22 @@
 import React from 'react';
-import {View, StyleSheet, TextInput} from 'react-native';
+import {View, StyleSheet, TextInput, Pressable, Text} from 'react-native';
 
-function WriteEditor({title, comment, onChangeTitle, onChangeComment}) {
+function WriteEditor({subtitle, comment, onChangesubTitle, onChangeComment, group, onChangeGroup}) {
   return (
     <View style={styles.block}>
       <TextInput
         placeholder="Enter the title"
         style={styles.titleInput}
         returnKeyType="next"
-        onChangeText={onChangeTitle}
-        value={title}
+        onChangeText={onChangesubTitle}
+        value={subtitle}
+      />
+      <TextInput
+        placeholder="Enter the Category"
+        style={styles.titleInput}
+        textAlignVertical="top"
+        onChangeText={onChangeGroup}
+        value={group}
       />
       <TextInput
         placeholder="Enter the comment"
@@ -37,6 +44,10 @@ const styles = StyleSheet.create({
     fontSize: 16,
     paddingVertical: 0,
     color: '#263238',
+  },
+  button: {
+    borderRadius: 20,
+    padding: 10,
   },
 });
 
