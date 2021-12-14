@@ -13,7 +13,7 @@ function SearchScreen({navigation}) {
     keyword === ''
       ? []
       : logs.filter(log =>
-          [log.title, log.comment, log.date].some(text => text.includes(keyword)),
+          [log.subtitle, log.comment, log.date].some(text => text.includes(keyword)),
         );
 
   if (keyword === '') {

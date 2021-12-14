@@ -6,7 +6,7 @@ import LogContext from '../contexts/LogContext';
 import DateHead from '../components/DateHead';
 import { RadioButton } from 'react-native-paper';
 
-function FeedsScreen() {
+function CategoryScreen() {
   const today = new Date();
   const {logs} = useContext(LogContext);
   const {onToggle} = useContext(LogContext);
@@ -22,7 +22,6 @@ function FeedsScreen() {
 
   return (
     <View style={styles.block}>
-      <DateHead date = {today}/>
 
       <View style={styles.radio}>
         <Text style={styles.title}>Sort by</Text>
@@ -81,4 +80,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default FeedsScreen;
+export default CategoryScreen;

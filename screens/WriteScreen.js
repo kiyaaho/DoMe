@@ -8,12 +8,13 @@ import LogContext from '../contexts/LogContext';
 
 function WriteScreen({route}) {
   const log = route.params?.log;
-  const [title, setTitle] = useState(log?.title ?? '');
+  const [subtitle, setsubTitle] = useState(log?.subtitle ?? '');
   const [comment, setComment] = useState(log?.comment ?? '');
   const navigation = useNavigation();
   const [date, setDate] = useState(log ? new Date(log.date) : new Date());
   const [done, setDone] = useState(log?.done ?? false);
-
+  const [now, setNow] = useState(log ? new Date(log.now) : new Date() );
+  const [group, setGroup] = useState(log?.group ?? '');
   const {onCreate, onModify, onRemove} = useContext(LogContext);
 
   const onAskRemove = () => {
@@ -42,18 +43,23 @@ function WriteScreen({route}) {
       onModify({
         id: log.id,
         date: date.toISOString(),
-        title,
+        subtitle,
         comment,
         done,
+        group,
       });
     } else {
       onCreate({
-        title,
+        subtitle,
         comment,
         date: date.toISOString(),
         done :false,
+        selected: false,
+        now: now.toISOString(),
+        group,
       });
     }
+    
     navigation.pop();
   };
 
@@ -71,12 +77,12 @@ function WriteScreen({route}) {
         />
 
         <WriteEditor
-          title={title}
+          subtitle={subtitle}
           comment={comment}
-          onChangeTitle={setTitle}
+          onChangesubTitle={setsubTitle}
           onChangeComment={setComment}
-          date={date}
-          onChangeDate={setDate}
+          group={group}
+          onChangeGroup={setGroup}
         />
       </KeyboardAvoidingView>
     </SafeAreaView>
