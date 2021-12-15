@@ -31,7 +31,7 @@
    * LogContext.js
    * SearchContext.js
 ### storages
-    * logsStorage.js
+   * logsStorage.js
 ### assets -> for images
 ---
 ## 🗓️ **To-do List App**
