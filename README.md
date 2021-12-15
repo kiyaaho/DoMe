@@ -2,7 +2,7 @@
 1976087 김제인 2068002 김나영 1976142 박수진 2076293 이남영   
 
 ## 🗓️ To-do List App
-<img src="https://user-images.githubusercontent.com/90603530/146142682-315e57a6-a39a-4bb4-aec5-6ebed1f4504c.gif" width="40%" height="30%""></img>
+<img src="![ezgif com-gif-maker](https://user-images.githubusercontent.com/90603530/146142682-315e57a6-a39a-4bb4-aec5-6ebed1f4504c.gif)" width="40%" height="30%""></img>
 * ## **Enter/edit/remove a to-do item**  
 * ## **Set the due date per to-do item**  
 * ## **Add a comment to a to-do list** 
