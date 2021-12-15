@@ -46,7 +46,7 @@
 1. Search for specific to-do items with a keyword (ex. keyword : 'study' or 'hospital')
 
 ---              
-## **Libraries used to implement your app**
+## **Libraries used to implement this app**
 * react-native-calendars 
   * used in : components/CaldendarView.js
   * to implement CalendarView for selecting duedate
