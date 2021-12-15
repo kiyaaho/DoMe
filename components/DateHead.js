@@ -3,7 +3,7 @@ import {useNavigation} from '@react-navigation/native';
 import {View, Text, StyleSheet, StatusBar, Image, TouchableOpacity, Modal, Pressable} from 'react-native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 
-function DateHead({date}) {
+function DateHead({date, completion}) {
   const year = date.getFullYear();
   const month = date.getMonth() + 1;
   const day = date.getDate();
@@ -33,7 +33,6 @@ function DateHead({date}) {
     <>
       <View style={[styles.statusBarPlaceholder, {height: top}]} />
       <StatusBar backgroundColor="#26a69a" barStyle="light-content" />
-
       <Modal
         animationType="none"
         transparent={true}
@@ -80,6 +79,7 @@ function DateHead({date}) {
         <Text style={styles.dateText}>
           {year} / {month} / {day}
         </Text>
+        <Text style={styles.dateText}>{completion}%</Text>
         <TouchableOpacity activeOpacity={0.5} onPress={() => setModalVisible(true)}>
           <View styles ={styles.buttonStyle}>
             <Image source = {require('../assets/outline_density_small_white_24dp.png')}/>
