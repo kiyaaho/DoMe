@@ -45,4 +45,38 @@
 * ## **Search for specific to-do items with a keyword**  
 1. Search for specific to-do items with a keyword (ex. keyword : 'study' or 'hospital')
 
-
+---              
+## **Libraries used to implement your app **
+* react-native-calendars 
+  * used in : components/CaldendarView.js
+  * to implement CalendarView for selecting duedate
+* @react-navigation/native
+  * used in : components/DateHead.js
+  * to implement screen transition
+* date-fns
+  * used in : components/WriteHeader.js
+  * to control format of date
+* date-fns/locale
+  * used in : components/FeedListItem.js
+  * to express characters in English in CalendarView
+* react-native-vector-icons/MaterialIcons
+  * used in : components/FloatingWriteButton.js
+  * to express WriteButton icon
+* react-native-modal-datetime-picker
+  * used in : components/WriteHeader.js
+  * to select the duedate in CalendarView (this libarary helps to show Calendar in app)
+* uuid 
+  * used in : contexts/LogContext.js
+  * to align unique id for each todo item
+* react-native-paper
+  * used in : screens/CategoryScreen.js
+  * to import RadioButton in this app (for Sorting duedate/added date)
+* @react-navigation/bottom-tabs
+  * used in : screens/MainTab.js
+  * to show bottom-tab for navigating to HomeScreen, CalendarScreen, and SearchScreen
+* @react-navigation/native-stack
+  * used in : screens/RootStack.js
+  * to implement several navigation (from screen navigation by using toggle menu to screen navigation by using bottom-tab)
+* @react-native-async-storage/async-storage
+  * used in : storages/logsStorages.js
+  * to save data from app 
