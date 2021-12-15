@@ -3,7 +3,7 @@
    
    
 ## 🗂️ **Folder Structure**
-### *  screens 
+###  screens 
    * CalendarScreen.js 
    * CategoryScreen.js
    * DeleteScreen.js
@@ -13,7 +13,7 @@
    * RootStack.js
    * SearchScreen.js
    * WriteScreen.js
-### * components
+### components
    * CalendarView.js
    * DateHead.js
    * DeleteButton.js
@@ -27,19 +27,19 @@
    * TransparentCircleButton.js
    * WriteEditor.js
    * WriteHeader.js
-### * contexts
+### contexts
     * LogContext.js
    * SearchContext.js
-### * storages
+### storages
     * logsStorage.js
-### * assets -> for images
+### assets -> for images
 ---
 ## 🗓️ **To-do List App**
 ![ezgif com-gif-maker](https://user-images.githubusercontent.com/90603530/146142682-315e57a6-a39a-4bb4-aec5-6ebed1f4504c.gif)
-### * **Enter/edit/remove a to-do item**  
-### * **Set the due date per to-do item**  
-### * **Add a comment to a to-do list** 
-### * **Allow users to set a category for each to-do item (grouping)** 
+### **Enter/edit/remove a to-do item**  
+### **Set the due date per to-do item**  
+### **Add a comment to a to-do list** 
+### **Allow users to set a category for each to-do item (grouping)** 
    1. Enter a to-do item (ex. study science)
    2. Set the due date per to-do item (ex. Calender view and clock view)
    3. Edit a to-do item (ex. comment : take a notebook -> comment : take a science book)
@@ -49,17 +49,17 @@
    
    
 ![ezgif com-gif-maker](https://user-images.githubusercontent.com/90603530/146142076-86cf188c-2422-47cc-bf6a-bd823f82c92b.gif)
-### * **Show all added to-do items**
-### * **Check/uncheck a to-do item to mark completion**
+### **Show all added to-do items**
+### **Check/uncheck a to-do item to mark completion**
    1. Show all added to-do items **with scroll view**
    2. Check/uncheck a to-do item to mark completion **by onLongPress**    
    
    
 ![ezgif com-gif-maker](https://user-images.githubusercontent.com/90603530/146144129-727de7c2-f731-49b0-bfd4-5565d46ba357.gif)
-### * **Show only the complete/incomplete to-do items (filtering)**  
-### * **Sort to-do items in terms of the added date, due date within each category** 
-### * **Sort to-do items in terms of the added date, due date across categories**  
-### * **Show/visualize the completion rate per category and per day, week or month**  
+### **Show only the complete/incomplete to-do items (filtering)**  
+### **Sort to-do items in terms of the added date, due date within each category** 
+### **Sort to-do items in terms of the added date, due date across categories**  
+### **Show/visualize the completion rate per category and per day, week or month**  
    1. Show only the complete/incomplete to-do items **with toggle menu -> Filter menu -> done/undone tasks**
    2. Sort to-do items in terms of the added date, due date within each category **with toggle menu -> Category -> Radio button (Sort by duedate/added date)**
    3. Show/visualize the completion rate per category and per day, week or month 
@@ -69,14 +69,14 @@
    
    
 ![ezgif com-gif-maker](https://user-images.githubusercontent.com/90603530/146145363-28394ada-15db-4a58-9cfe-8ab60b055a88.gif)
-### * **Select/deselect specific/all to-do items**
-### * **Delete specific/all to-do items**  
+### **Select/deselect specific/all to-do items**
+### **Delete specific/all to-do items**  
    1. Select/deselect specific/all to-do items **if task is selected, the X mark will be seen by toggling**
    2. Delete specific/all to-do items **by pressing the trash can button"    
    
    
 ![ezgif com-gif-maker](https://user-images.githubusercontent.com/90603530/146144886-b7cf0bb4-b1f4-48ea-923f-a286d354255a.gif)
-### * **Search for specific to-do items with a keyword**  
+### **Search for specific to-do items with a keyword**  
    1. Search for specific to-do items with a keyword (ex. keyword : 'study' or 'hospital')   
    
 ---              
