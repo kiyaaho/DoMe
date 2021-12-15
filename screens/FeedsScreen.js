@@ -20,9 +20,22 @@ function FeedsScreen() {
 
   const [checked, setChecked] = useState('first');
 
+  let count = 0;
+  for(let i=0; i < logs.length; i++) {
+    if(logs[i].done == true)  {
+      count++;
+    }
+  }
+  if(logs.length>0){
+    count = ((count/logs.length)*100).toFixed(1)
+  }
+  else{
+    count = 0;
+  }
+
   return (
     <View style={styles.block}>
-      <DateHead date = {today}/>
+      <DateHead date = {today} completion={count}/>
 
       <View style={styles.radio}>
         <Text style={styles.title}>Sort by</Text>

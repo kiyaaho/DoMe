@@ -47,6 +47,7 @@ function WriteScreen({route}) {
         comment,
         done,
         group,
+        now,
       });
     } else {
       onCreate({
