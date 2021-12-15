@@ -1,6 +1,6 @@
 # OpenSourceProject_ToDoList  
 1976087 김제인 2068002 김나영 1976142 박수진 2076293 이남영
-* **Enter/edit/remove a to-do item**
+##* **Enter/edit/remove a to-do item**
 * **Set the due date per to-do item**
 * **Show all added to-do items**
 * **Check/uncheck a to-do item to mark completion**
