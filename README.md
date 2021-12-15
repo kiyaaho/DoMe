@@ -28,7 +28,7 @@
    * WriteEditor.js
    * WriteHeader.js
 ### contexts
-    * LogContext.js
+   * LogContext.js
    * SearchContext.js
 ### storages
     * logsStorage.js
