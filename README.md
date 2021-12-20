@@ -1,6 +1,6 @@
 # 📱**Do Me!**
 **TEAM 15 - 1976087 김제인 2068002 김나영 1976142 박수진 2076293 이남영**    
-   
+**Presentation URL: https://youtu.be/pQE3xncTPQQ**
    
 ## 🗂️ **Folder Structure**
 ###  screens 
