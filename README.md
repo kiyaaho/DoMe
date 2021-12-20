@@ -114,3 +114,7 @@
 * @react-native-async-storage/async-storage
   * used in : storages/logsStorages.js
   * to save data from app 
+---
+## 📑 **Reference**
+* https://github.com/velopert/dealing-with-react-native
+* https://reactnative.dev/docs/modal
